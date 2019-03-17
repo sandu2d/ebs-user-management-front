@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/app.css">
+
+    <title>Test PHP Developer Position |EBS Integrator|</title>
+  </head>
+  <body>
+    <center><h1>Test PHP Developer Position |EBS Integrator|</h1></center>
+    <br>
+    <div class="container">
+        <div class="logged">
+            <span>Name: <strong id="user-name"></strong>, <button class="btn btn-link logout">Logout</button></span>
+            <br>
+            <span>Groups: <strong id="user-groups"></strong></span>
+            <br><br><br>
+            <div class="tabbable">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#menu1">Users</a></li>
+                    <li><a data-toggle="tab" href="#menu12">Create user</a></li>
+                    <li><a data-toggle="tab" href="#menu2">Groups</a></li>
+                    <li><a data-toggle="tab" href="#menu22">Create group</a></li>
+                    <li><a data-toggle="tab" href="#menu3">Permissions</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="menu22" class="tab-pane fade">
+                        <form class="form block">
+                            <input type="text" name="name" class="form-control name" placeholder="name">
+                            <button class="btn btn-md btn-success create-group">Create</button>
+                        </form>
+                        <div class="errors"></div>
+                    </div>
+                    <div id="menu12" class="tab-pane fade">
+                        <form class="form block">
+                            <input type="text" name="name" class="form-control name" placeholder="name">
+                            <input type="email" name="email" class="form-control email" placeholder="email">
+                            <input type="password" name="password" class="form-control password" placeholder="password">
+                            <button class="btn btn-md btn-success create-user">Create</button>
+                        </form>
+                        <div class="errors"></div>
+                    </div>
+                    <div id="menu1" class="tab-pane fade in active">
+                        <table class="table user-list">
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>name</th>
+                                    <th>email</th>
+                                    <th>groups</th>
+                                    <th>activated</th>
+                                    <th>blocked</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                        <div class="edit-user">
+                            <form class="form block">
+                                <input type="text" style="display:none;" name="id" class="form-control id">
+                                <input type="text" name="name" class="form-control name" placeholder="name">
+                                <input type="email" name="email" class="form-control email" placeholder="email">
+                                <input type="password" name="password" class="form-control password" placeholder="password">
+                                <button class="btn btn-md btn-success save-edit-user">Save</button>
+                                <button class="btn btn-link cancel-edit-user">Cancel</button>
+                            </form>
+                        </div>
+                        <div class="sync-user-groups">
+                            <form class="form block">
+                                <input type="text" style="display:none;" name="id" class="form-control id">
+                                <select class="form-control select" name="groups">
+                                </select>
+                                <button class="btn btn-md btn-success save-sync-user">Add</button>
+                                <button class="btn btn-link cancel-sync-user">Cancel</button>
+                            </form>
+                        </div>
+                        <div class="sync-user-groups2">
+                            <form class="form block">
+                                <input type="text" style="display:none;" name="id" class="form-control id">
+                                <select class="form-control select" name="groups">
+                                </select>
+                                <button class="btn btn-md btn-success save-sync-user2">Remove</button>
+                                <button class="btn btn-link cancel-sync-user2">Cancel</button>
+                            </form>
+                        </div>
+                        <div class="errors"></div>
+                    </div>
+                    <div id="menu2" class="tab-pane fade">
+                        <table class="table group-list">
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>name</th>
+                                    <th>permissions</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                        <div class="edit-group">
+                            <form class="form block">
+                                <input type="text" style="display:none;" name="id" class="form-control id">
+                                <input type="text" name="name" class="form-control name" placeholder="name">
+                                <button class="btn btn-md btn-success save-edit-group">Save</button>
+                                <button class="btn btn-link cancel-edit-group">Cancel</button>
+                            </form>
+                        </div>
+                        <div class="sync-group-permissions">
+                            <form class="form block">
+                                <input type="text" style="display:none;" name="id" class="form-control id">
+                                <select class="form-control select" multiple name="permissions">
+                                </select>
+                                <button class="btn btn-md btn-success save-sync-group">Save</button>
+                                <button class="btn btn-link cancel-sync-group">Cancel</button>
+                            </form>
+                        </div>
+                        <div class="errors"></div>
+                    </div>
+                    <div id="menu3" class="tab-pane fade">
+                        <table class="table per-list">
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>name</th>
+                                    <th>code</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="not-logged">
+            <div class="login-form">
+                <h2>Login form</h2>
+                <br>
+                <form class="form">
+                    <input type="email" name="user[email]" class="form-control email" placeholder="email">
+                    <input type="password" name="user[password]" class="form-control password" placeholder="password">
+                    <br>
+                    <center>
+                        <button class="btn btn-lg btn-success login-acc">Login</button>
+                        <button class="btn btn-link open-register-form">Registration</button>
+                    </center>
+                </form>
+                <div class="errors"></div>
+            </div>
+            <div class="register-form">
+                <h2>Login form</h2>
+                <br>
+                <form class="form">
+                    <input type="text" name="user[name]" class="form-control name" placeholder="name">
+                    <input type="email" name="user[email]" class="form-control email" placeholder="email">
+                    <input type="password" name="user[password]" class="form-control password" placeholder="password">
+                    <br>
+                    <center>
+                        <button class="btn btn-link open-login-form">Login</button>
+                        <button class="btn btn-lg btn-success register-acc">Registration</button>
+                    </center>
+                </form>
+                <div class="errors"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

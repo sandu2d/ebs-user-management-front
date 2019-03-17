@@ -1,0 +1,36 @@
+.errors {
+    color: red;
+    font-weight: bold;
+}
+.register-form {
+    display: none;
+}
+.logged {
+    display: none;
+}
+.not-logged {
+    display: none;
+}
+li {
+    padding-right: 10px;
+    margin-right: 10px;
+}
+.block {
+    width: 500px;
+    margin: 0 auto;
+}
+.edit-user {
+    display: none;
+}
+.edit-group {
+    display: none;
+}
+.sync-group-permissions {
+    display: none;
+}
+.sync-user-groups {
+    display: none;
+}
+.sync-user-groups2 {
+    display: none;
+}
